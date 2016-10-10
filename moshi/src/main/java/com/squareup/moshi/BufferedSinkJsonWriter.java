@@ -57,14 +57,14 @@ final class BufferedSinkJsonWriter extends JsonWriter {
   /** The output data, containing at most one top-level array or object. */
   private final BufferedSink sink;
 
-  private int[] stack = new int[32];
+  private int[] stack = new int[64];
   private int stackSize = 0;
   {
     push(EMPTY_DOCUMENT);
   }
 
-  private String[] pathNames = new String[32];
-  private int[] pathIndices = new int[32];
+  private String[] pathNames = new String[64];
+  private int[] pathIndices = new int[64];
 
   /**
    * A string containing a full set of spaces for a single level of
